@@ -1,64 +1,12 @@
 import React from 'react';
-import {Link, NavLink} from 'react-router-dom';
-import adidasModel1 from '../../assets/AdiFOM_TRXN_Shoes_Black_IG7453_01_standard.webp'
-import adidasModel2 from '../../assets/PostMove_Mid_Cloudfoam_Super_Lifestyle_Basketball_Mid_Classic_Shoes_Black_GY7163_01_standard.webp'
-import adidasModel3 from '../../assets/Superstar_XLG_Shoes_Black_IG9777_01_standard.webp'
-import { S } from './_styles';
-import {PATH} from "../../App";
 
-export type AdidasItem= {
-    id: number
-    model: string;
-    collection: string;
-    price: string;
-    picture: string;
-}
-
-export const adidasArr:AdidasItem[] = [
-    {
-        id: 1,
-        model: 'ADIDAS ADIFOM TRXN',
-        collection: 'new collection1',
-        price: '100200$',
-        picture: adidasModel1,
-
-    },
-    {
-        id: 2,
-        model: 'ADIDAS ADIFOM SUPER',
-        collection: 'new collection22',
-        price: '200300$',
-        picture: adidasModel2
-    },
-    {
-        id: 3,
-        model: 'ADIDAS SUPER SUPERSKI',
-        collection: 'new collection333',
-        price: '300400$',
-        picture: adidasModel3
-    }
-]
-
-export const Adidas = () => {
+export const PageTwo = () => {
     return (
         <div>
-           <h2> ADIDAS</h2>
-            <S.ImgContainer>
-                {adidasArr.map((el, index)=> (
-                    <Link key={index} to={`/adidas/${el.id}`}>
-                        <S.Img src={el.picture} alt={el.model}/>
-                    </Link>
-                ))}
-
-                {/*<S.ImgWrap><NavLink to={PATH.MODEL}><img src={adidasModel1} alt="adidasModel1"/></NavLink></S.ImgWrap>*/}
-                {/*<S.ImgWrap><NavLink to={PATH.MODEL}><img src={adidasModel2} alt="adidasModel2"/></NavLink></S.ImgWrap>*/}
-                {/*<S.ImgWrap><NavLink to={PATH.MODEL}><img src={adidasModel3} alt="adidasModel3"/></NavLink></S.ImgWrap>*/}
-
-            </S.ImgContainer>
+            <h2>PUMA</h2>
             <p>
                 What is Lorem Ipsum?
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
                 dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                 It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                 It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
@@ -84,3 +32,4 @@ export const Adidas = () => {
         </div>
     );
 };
+
