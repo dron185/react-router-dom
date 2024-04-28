@@ -15,15 +15,15 @@ function App() {
                 <div className={styles.nav}>
                     <div><NavLink
                         to={"/page1"}
-                        className={({ isActive}) => isActive ? `${styles.activeNavLink}` : `${styles.navLink}`}
+                        className={({ isActive}) => isActive ? styles.activeNavLink : styles.navLink}
                     >Page1</NavLink></div>
                     <div><NavLink
                         to={"/page2"}
-                        className={({ isActive}) => isActive ? `${styles.activeNavLink}` : `${styles.navLink}`}
+                        className={({ isActive}) => isActive ? styles.activeNavLink : styles.navLink}
                     >Page2</NavLink></div>
                     <div><NavLink
                         to={"/page3"}
-                        className={({ isActive}) => isActive ? `${styles.activeNavLink}` : `${styles.navLink}`}
+                        className={({ isActive}) => isActive ? styles.activeNavLink : styles.navLink}
                     >Page3</NavLink></div>
                 </div>
                 <div className={styles.content}>
