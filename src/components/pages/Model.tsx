@@ -1,13 +1,25 @@
 import React from 'react';
 import {useParams} from "react-router-dom";
-import {adidasArr} from "./Adidas";
-import S from './Sneakers.module.css'
-import {Error404} from "./Error404";
+import {adidasArr, AdidasItem} from "./Adidas";
+import {pumaArr, PumaItem} from "./Puma";
+
+type CrossModelsType = {
+    [key: string]: (AdidasItem[] | PumaItem[]);
+}
+
+const crossModels: CrossModelsType = {
+    adidas: adidasArr,
+    puma: pumaArr
+}
 
 export const Model = () => {
-    const params = useParams()
+    //const params = useParams()
+    const {model, id} = useParams();
+    console.log(model, id)
 
-    const currentModel = adidasArr.find(el => el.id === Number(params.id))
+    //todo: It needs to remove hardcode of the array
+    // const currentModel = adidasArr.find(el => el.id === Number(id))
+    const currentModel = model ? crossModels[model].find(el => el.id === Number(id)) : null
 
     return (
         <div style={{textAlign: "center"}}>
