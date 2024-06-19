@@ -6,11 +6,13 @@ import {Abibas} from "./components/pages/Abibas";
 import {Navigate, NavLink, Route, Routes} from 'react-router-dom';
 import {Error404} from "./components/pages/Error404";
 import {Model} from "./components/pages/Model";
+import {Prices} from "./components/pages/Prices";
 
 export const PATH = {
     PAGE1: '/adidas',
     PAGE2: '/puma',
     PAGE3: '/abibas',
+    PRICES: '/prices',
     // ERROR: '/page/error',
     // MODEL: '/adidas/model',
 } as const;
@@ -33,6 +35,10 @@ function App() {
                         to={PATH.PAGE3}
                         className={({ isActive}) => isActive ? styles.activeNavLink : styles.navLink}
                     >Abibas</NavLink></div>
+                    <div><NavLink
+                        to={PATH.PRICES}
+                        className={({ isActive}) => isActive ? styles.activeNavLink : styles.navLink}
+                    >Prices for wholesalers</NavLink></div>
                 </div>
                 <div className={styles.content}>
                     <Routes>
@@ -42,6 +48,7 @@ function App() {
                         <Route path={PATH.PAGE2} element={<Puma/>}/>
                         <Route path={PATH.PAGE3} element={<Abibas/>}/>
                         <Route path={'/:model/:id'} element={<Model/>}/>
+                        <Route path={PATH.PRICES} element={<Prices/>}/>
 
                         <Route path={"/*"} element={<Error404/>}/>
                         {/*<Route path={"/adidas/*"} element={<Error404/>}/>*/}
