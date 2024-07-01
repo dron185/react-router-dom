@@ -3,15 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter} from "react-router-dom";
+import {BrowserRouter, RouterProvider} from "react-router-dom";
+import {router} from "./routes/router";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 root.render(
-    <BrowserRouter>
+    <RouterProvider router={router} />
+    /*<BrowserRouter>
         <App/>
-    </BrowserRouter>
+    </BrowserRouter>*/
 );
 
 /*or HashRouter instead of BrowserRouter - если будем заливать на gh-pages*/
