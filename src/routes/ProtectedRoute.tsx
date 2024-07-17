@@ -11,6 +11,6 @@ type ProtectedRouteProps = {
 export const ProtectedRoute = ({children}: ProtectedRouteProps) => {
     //const [isAccess, setIsAccess] = useState(true)
 
-    const isAccess = false
-    return <> {isAccess ? children : <Navigate to={'/error'}/>} </>
+    const logged = false
+    return <> {logged ? children : <Navigate to={'/login'}/>} </>
 };
