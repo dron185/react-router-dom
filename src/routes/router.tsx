@@ -23,14 +23,14 @@ export const PATH = {
     ABIBAS: '/abibas',
     PRICES: '/prices',
     MODEL: '/:model/:id',
-    PROTECTED_PAGE: '/protected',
+    ERROR: '/error',
 } as const;
 
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <App/>,
-        errorElement: <ProtectedRoute><Error404/></ProtectedRoute>,
+        errorElement: <Error404/>,
         children: [
             {
                 path: PATH.ADIDAS,
@@ -53,12 +53,16 @@ export const router = createBrowserRouter([
                 element: <Model/>,
             },
             {
-                path: PATH.PROTECTED_PAGE,
+                path: '/protected',
                 element: (
                     <ProtectedRoute>
                         <ProtectedPage/>
                     </ProtectedRoute>
                 ),
+            },
+            {
+                path: PATH.ERROR,
+                element: <Error404/>,
             },
 
         ]
