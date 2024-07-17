@@ -13,6 +13,7 @@ export const PATH = {
     PAGE2: '/puma',
     PAGE3: '/abibas',
     PRICES: '/prices',
+    PROTECTED_PAGE: '/protected',
     // ERROR: '/page/error',
     // MODEL: '/adidas/model',
 } as const;
@@ -25,20 +26,26 @@ function App() {
                 <div className={styles.nav}>
                     <div><NavLink
                         to={PATH.PAGE1}
-                        className={({ isActive}) => isActive ? styles.activeNavLink : styles.navLink}
+                        className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink}
                     >Adidas</NavLink></div>
                     <div><NavLink
                         to={PATH.PAGE2}
-                        className={({ isActive}) => isActive ? styles.activeNavLink : styles.navLink}
+                        className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink}
                     >Puma</NavLink></div>
                     <div><NavLink
                         to={PATH.PAGE3}
-                        className={({ isActive}) => isActive ? styles.activeNavLink : styles.navLink}
+                        className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink}
                     >Abibas</NavLink></div>
                     <div><NavLink
                         to={PATH.PRICES}
-                        className={({ isActive}) => isActive ? styles.activeNavLink : styles.navLink}
+                        className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink}
                     >Prices for wholesalers</NavLink></div>
+                    <div><NavLink
+                        to={PATH.PROTECTED_PAGE}
+                        className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink}
+                    >Protected page</NavLink>
+                    </div>
+
                 </div>
                 <div className={styles.content}>
 
