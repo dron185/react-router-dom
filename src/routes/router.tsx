@@ -10,6 +10,7 @@ import {Model} from "../components/pages/Model";
 import {ProtectedPage} from "../components/pages/ProtectedPage";
 import {Login} from "../components/pages/Login";
 
+//2. прописываем пути, закрепляем их const, чтобы не ошибиться
 export const PATH = {
     ADIDAS: '/adidas',
     PUMA: '/puma',
@@ -21,6 +22,10 @@ export const PATH = {
 } as const;
 
 const publicRoutes: RouteObject[] = [
+    {
+        path: "/",
+        element: <Navigate to={PATH.ADIDAS}/>,
+    },
     {
         path: PATH.ADIDAS,
         element: <Adidas/>,
@@ -64,12 +69,14 @@ export const PrivateRoutes = () => {
     return <> {isAuth ? <Outlet/> : <Navigate to={'/login'}/>} </>
 };
 
+// 1. - создаем файл router.tsx, в нем сам router при помощи метода createBrowserRouter:
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <App/>,
         errorElement: <Navigate to={PATH.ERROR}/>,
         children: [
+            //если мы хотим отрисовать children-ов, мы должны использовать <Outlet/>
             {
                 element: <PrivateRoutes/>,
                 children: privateRoutes

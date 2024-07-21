@@ -10,6 +10,7 @@ const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 root.render(
+    //3. передаем сюда наш router
     <RouterProvider router={router} />
     /*<BrowserRouter>
         <App/>
